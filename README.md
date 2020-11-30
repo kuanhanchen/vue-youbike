@@ -1,4 +1,6 @@
-# creative-ark
+# Vue YouBike Station Information
+
+YouBike Station Information Table built in Vue, BootstrapVue, and Vue Class Component with unit testing.
 
 ## Project setup
 ```
