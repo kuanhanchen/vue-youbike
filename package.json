@@ -4,8 +4,6 @@
   "private": true,
   "homepage": "https://kuanhanchen.github.io/vue-youbike",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
