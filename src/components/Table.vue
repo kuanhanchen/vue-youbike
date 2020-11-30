@@ -5,7 +5,7 @@
       striped
       hover
       :fields="fields"
-      :items="items"
+      :items="stations"
       responsive="sm"
       class="table"
     ></b-table>
@@ -18,6 +18,7 @@ import axios from 'axios'
 @Component
 export default class Table extends Vue {
   @Prop() private title!: string
+  @Prop() private stations!: Record<string, any>[]
   data () {
     return {
       fields: [
@@ -25,8 +26,7 @@ export default class Table extends Vue {
         { key: 'aren', label: 'Staion location' },
         { key: 'sbi', label: 'Can be by vehicle' },
         { key: 'tot', label: 'Can be stopped' }
-      ],
-      items: Array
+      ]
     }
   }
 
@@ -34,7 +34,7 @@ export default class Table extends Vue {
     axios
       .get('https://tcgbusfs.blob.core.windows.net/blobyoubike/YouBikeTP.json')
       .then(({ data: { retVal } }: any) => {
-        this.items = Object.keys(retVal).map(key => retVal[key])
+        this.stations = Object.keys(retVal).map(key => retVal[key])
       })
   }
 }
